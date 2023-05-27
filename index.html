@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>410730823林冠廷期末專案</title> <!-- 網頁名稱 -->
+    <!-- 網頁內容的宣告 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" /> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- icon內容的宣告 -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+
+    <link href="works.css" rel="stylesheet" /> <!-- 主要內容的編輯 -->
+    <link href="style1.css" rel="stylesheet" /> <!-- menu第3個內容 -->
+    <link href="style2.css" rel="stylesheet" /> <!-- menu第1個內容 -->
+
+    
+    
+  </head>
+
+
+<!-- onclick:按下按鈕會執行""的內容 -->
+  <body>
+    <button class="burger" onclick="toggleMenu()"></button>
+    <div class="background"></div><!--菜單大圓圈-->
+    
+    
+    <!-- 左邊選單內容 -->
+    <div class="menu">
+      
+      <nav>
+    <!-- menu第1個內容 -->
+      <a style="animation-delay: 0.2s" href="https://1128ting.github.io/410730823_midterm/" target="z1">
+        <span class="loader"></span> <img src="./images/01.jpeg" /> </a>
+		<!-- menu第2個內容 -->
+      <a style="animation-delay: 0.3s" href="https://1128ting.github.io/interactive_video/" target="z1"><span class="material-symbols-outlined">
+        fast_forward</span> 教學影片 <span class="material-symbols-outlined">fast_rewind</span> </a>  <!-- span+選單文字() -->
+    <!-- menu第3個內容 -->
+		  <a style="animation-delay: 0.4s" href="https://1128ting.github.io/interactive_gamework/" target="z1"> 
+        <div class="container">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div> 互動小遊戲 </a>
+    <!-- menu第4個內容 -->
+		  <a style="animation-delay: 0.5s" href="https://1128ting.github.io/20230503_2/" target="z1"><span class="material-symbols-outlined">accessibility</span> 
+      我的課程作品 <span class="material-symbols-outlined">accessibility</span></a>
+      
+      </nav>
+    </div>
+    <!-- 左邊選單內容 -->
+
+    
+
+    <div class="main"> <!-- class名稱隨意,iframe name名稱隨意 -->
+      <iframe name="z1" width="100%" height="100%" frameBorder="0"></iframe>
+    </div>
+
+
+
+    <script type="text/javascript">
+      const toggleMenu = () => document.body.classList.toggle("open");
+    </script>
+  </body>
+</html>

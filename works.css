@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  html,body {
+    height: 100%;
+  }
+  
+  body {
+    font-family: "Euclid Circular A", Poppins;
+    background-image: url("./images/bg.jpg");/* 背景圖 */
+    background-size: cover ;/* 背景圖大小 */
+    background-repeat: no-repeat;/* 背景圖顯示形式 */
+    background-position: center;/* 背景圖位置 */
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  /* 菜單按鈕 */
+  button {
+    border: 0;
+    padding: 0;
+    background: transparent;
+    cursor: pointer; /* 鼠標移動到按鈕上改變形式 */
+  }
+  
+  .burger,.menu {
+    position: fixed;
+  }
+  /* 漢堡icons */
+  .burger {
+    z-index: 4;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+    width: 88px;
+    height: 88px;
+    background-image: url("menu.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  /* 菜單展開時漢堡icon的形式 */
+  body.open .burger {
+    background-image: url("close.svg");
+  }
+  /* 菜單展開時的圓圈 */
+  .background {
+    position: fixed;
+    z-index: 2; /* 覆蓋的範圍 */
+    top: 44px;
+    left: 44px;
+    aspect-ratio: 1 / 1; /* 圓圈出現時的首選縱横比(width/height) */
+    translate: -50% -50%;/* 彈出速率 */
+    height: 88px;
+    background: #11c7a6b6; /* 顏色 */
+    border-radius: 50%;  /*圓弧角*/
+    opacity: -1;/* 透明度 */
+    transition: 0.4s; /* 彈出速率 */
+  }
+   /* 菜單展開時的圓圈形式 */
+  body.open .background {
+    height: 300vh;
+    opacity: 0.8; /* 透明度 */
+  }
+  
+  .menu {
+    z-index: 3;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.05s;
+  }
+  
+  .menu nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 100px;
+  }
+  /* 個人照片 */
+  .menu nav img {
+    width: 70px;
+    height:70px;
+    position: relative;
+    top: 0px; 
+    right: 0px;
+    
+  }
+  /*  個人照片的移動  */
+  .menu nav img:hover {
+    /* position: relative;
+    top: 0px; 
+    right: 0px; */
+    box-shadow: 5px 5px 60px rgba(0, 247, 227, 0.477); /* 陰影 */
+    transform: translate(10px, -10px);/* 照片往右上移動 */
+  }
+
+
+
+  body.open .menu {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  body .menu nav:hover > a {
+    opacity: 0.25;
+  }
+  
+  body .menu nav > a:hover {
+    opacity: 1;
+    translate: 8px 0;
+  }
+  /* 菜單文字 */
+  .menu a {
+    position: relative;
+    color: #b231eed6;
+    font-size: 32px;
+    font-family: "Euclid Circular A";
+    padding: 20px 0 20px 20px;
+    text-decoration: none;
+    opacity: 0;
+    cursor: grab; /* 鼠標移動到按鈕上改變形式 */
+    transition: 0.4s;
+  }
+  /* 點擊菜單文字後的箭頭 */
+  .menu a::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -26px;
+    translate: 0 -50%;
+    margin-top: 2px;
+    width: 10px;
+    height: 10px;
+    border-top: 3px solid #bdd224; /* >的上半部顏色 */
+    border-right: 3px solid #0f75eb; /* >的下半部顏色 */
+    opacity: 0;
+    rotate: 45deg;
+    transition: 0.3s;
+  }
+  
+  .menu a:hover::after {
+    opacity: 1;
+  }
+  
+  @keyframes appear {
+    0% {
+      opacity: 0;
+      translate: -30px 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  /* 選擇菜單文字碰觸是否顯示 */
+  body.open .menu a {
+    opacity: 1;
+    animation: appear 0.35s backwards;
+  }
+  
+  .main{
+    position: relative;
+    width: 90vw;
+    height: 90vh;
+    top: 50px;
+  }
